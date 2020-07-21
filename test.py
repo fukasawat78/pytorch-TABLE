@@ -21,8 +21,9 @@ def main(config):
         num_workers=2
     )
 
+
     # build model architecture
-    model = config.init_obj('arch', module_arch)
+    model = config.init_obj('arch', module_arch, embedding_sizes=data_loader.embedding_sizes, n_continuous=data_loader.n_numeric)
     logger.info(model)
 
     # get function handles of loss and metrics
@@ -45,9 +46,9 @@ def main(config):
     total_metrics = torch.zeros(len(metric_fns))
 
     with torch.no_grad():
-        for i, (data, target) in enumerate(tqdm(data_loader)):
-            data, target = data.to(device), target.to(device)
-            output = model(data)
+        for i, (x1, x2, target) in enumerate(tqdm(data_loader)):
+            x1, x2, target = x1.to(device), x2.to(device), target.to(device)
+            output = model(x1, x2)
 
             #
             # save sample images, or do something with output here
@@ -55,7 +56,7 @@ def main(config):
 
             # computing loss, metrics on test set
             loss = loss_fn(output, target)
-            batch_size = data.shape[0]
+            batch_size = target.shape[0]
             total_loss += loss.item() * batch_size
             for i, metric in enumerate(metric_fns):
                 total_metrics[i] += metric(output, target) * batch_size
