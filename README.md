@@ -1,4 +1,4 @@
-# PyTorch Template Project
+# Based on "PyTorch Template Project"
 PyTorch deep learning project made easy.
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
@@ -100,19 +100,19 @@ Try `python train.py -c config.json` to run code.
 Config files are in `.json` format:
 ```javascript
 {
-  "name": "Mnist_LeNet",        // training session name
+  "name": "Tabular",        // training session name
   "n_gpu": 1,                   // number of GPUs to use for training.
   
   "arch": {
-    "type": "MnistModel",       // name of model architecture to train
+    "type": "TabularModel",       // name of model architecture to train
     "args": {
 
     }                
   },
   "data_loader": {
-    "type": "MnistDataLoader",         // selecting data loader
+    "type": "TabularDataLoader",       // selecting data loader
     "args":{
-      "data_dir": "data/",             // dataset path
+      "data_dir": "data/data.csv",     // dataset path, whose dataset has to include numercic/categorical data and id_target_data("ID", "Target), no text data
       "batch_size": 64,                // batch size
       "shuffle": true,                 // shuffle training data before splitting
       "validation_split": 0.1          // size of validation dataset. float(portion) or int(number of samples)
