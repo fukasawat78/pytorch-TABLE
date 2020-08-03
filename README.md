@@ -1,3 +1,4 @@
+# Sample Notebooks about Data Science for Tabular Data
 # Based on "PyTorch Template Project"
 PyTorch deep learning project made easy.
 
@@ -309,7 +310,7 @@ The `validation_split` can be a ratio of validation set per total data(0.0 <= fl
 ### Checkpoints
 You can specify the name of the training session in config files:
   ```json
-  "name": "MNIST_LeNet",
+  "name": "TabularNet",
   ```
 
 The checkpoints will be saved in `save_dir/name/timestamp/checkpoint_epoch_n`, with timestamp in mmdd_HHMMSS format.
