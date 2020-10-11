@@ -1,4 +1,8 @@
-# Data Science Repository for Tabular Data Based on "PyTorch Template Project"
+# Data Science Repository for Tabular Data 
+# Based on "PyTorch Template Project"
+
+generated from victoresque/pytorch-template
+
 PyTorch deep learning project made easy.
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
