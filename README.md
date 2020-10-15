@@ -1,7 +1,5 @@
-# Data Science Repository for Tabular Data 
-# Based on "PyTorch Template Project"
-
-generated from victoresque/pytorch-template
+# Data Science Repository for Tabular Data "based on PyTorch Template Project"
+==============================================================================
 
 PyTorch deep learning project made easy.
 
