@@ -1,5 +1,4 @@
 # Data Science Repository for Tabular Data "based on PyTorch Template Project"
-==============================================================================
 
 PyTorch deep learning project made easy.
 
