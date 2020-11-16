@@ -1,10 +1,10 @@
-# Data Science Repository for Tabular Data
+# Categorical Embeddings
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
 
-* [PyTorch Data Science Repo for Tabular Data](#pytorch-template-project)
+* [Categorical Embeddings](#pytorch-template-project)
 	* [Requirements](#requirements)
 	* [Features](#features)
 	* [Folder Structure](#folder-structure)
