@@ -92,7 +92,6 @@
   ```
 
 ## Usage
-The code in this repo is an MNIST example of the template.
 Try `python train.py -c config.json` to run code.
 
 ### Config file format
