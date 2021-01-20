@@ -24,6 +24,9 @@ def main(config):
     data_loader = config.init_obj('data_loader', module_data)
     valid_data_loader = data_loader.split_validation()
     
+    print(data_loader.decode())
+    print(data_loader.decode())
+    
     # build model architecture, then print to console
     model = config.init_obj('arch', module_arch, embedding_sizes=data_loader.embedding_sizes, n_continuous=data_loader.n_numeric)
     logger.info(model)
