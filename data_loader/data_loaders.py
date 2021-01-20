@@ -8,11 +8,12 @@ class TabularDataLoader(BaseDataLoader):
         trsfm = transforms.Compose([
             transforms.ToTensor()
         ])
+        
         self.data = pd.read_csv(data_dir, encoding="utf-8")
         self.dataset = TabularDatasets(self.data)
         self.dataset.missing_data()
         self.dataset.label_encoding()
         self.dataset.make_alldata_category()
-        self.dataset.separate_data()
         self.embedding_sizes, self.n_numeric = self.dataset.choosing_embedded_columns()
+        
         super().__init__(self.dataset, batch_size, shuffle, validation_split, num_workers)

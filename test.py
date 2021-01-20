@@ -14,7 +14,7 @@ def main(config):
     # setup data_loader instances
     data_loader = getattr(module_data, config['data_loader']['type'])(
         config['data_loader']['args']['data_dir'],
-        batch_size=512,
+        batch_size=64,
         shuffle=False,
         validation_split=0.0,
         training=False,
@@ -49,10 +49,6 @@ def main(config):
         for i, (x1, x2, target) in enumerate(tqdm(data_loader)):
             x1, x2, target = x1.to(device), x2.to(device), target.to(device)
             output = model(x1, x2)
-
-            #
-            # save sample images, or do something with output here
-            #
 
             # computing loss, metrics on test set
             loss = loss_fn(output, target)

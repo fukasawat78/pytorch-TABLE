@@ -8,10 +8,10 @@ class TabularDatasets(Dataset):
     def __init__(self, data):
         
         self.cat_columns = [s for s in list(data.select_dtypes(exclude=["number"]).columns)]
-        self.num_columns = [s for s in list(data.select_dtypes(include=["number"]).columns) if (s != 'Target') & (s != 'ID')]
-        self.id_target_columns = ["ID", "Target"]
+        self.num_columns = [s for s in list(data.select_dtypes(include=["number"]).columns) if s != 'Target']
+        self.id_target_columns = ["Target"]
         
-        self.X = data.drop(["ID", "Target"], axis=1)
+        self.X = data.drop(["Target"], axis=1)
         self.X1 = 0#data.loc[:, cat_columns].copy().values # categorical
         self.X2 = 0#data.loc[:, num_columns].copy().values # numerical
         self.y = data["Target"].values
@@ -48,7 +48,7 @@ class TabularDatasets(Dataset):
     def choosing_embedded_columns(self):
         embedded_cols = {n: len(col.cat.categories) for n,col in self.X[self.cat_columns].items() if len(col.cat.categories) > 2}
         embedding_sizes = [(n_categories, min(50, (n_categories+1)//2)) for _,n_categories in embedded_cols.items()]
-        num_size = len(self.X.columns)-len(embedded_cols)
+        num_size = 4
         
         return embedding_sizes, num_size
             

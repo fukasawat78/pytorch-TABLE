@@ -39,6 +39,7 @@ class Trainer(BaseTrainer):
         self.model.train()
         self.train_metrics.reset()
         for batch_idx, (x1, x2, target) in enumerate(self.data_loader):
+
             x1, x2, target = x1.to(self.device), x2.to(self.device), target.to(self.device)
 
             self.optimizer.zero_grad()
